@@ -12,8 +12,8 @@ caminhoCrt="/home/operador/rsa3/pki/issued/$mail.crt"
 #informações básicas LDAP
 URI="ldap://ad.ifce.edu.br:389"
 BASE="ou=ifce,dc=adproducao,dc=ifce,dc=edu,dc=br";
-ACCOUNT="vpnbind@adproducao.ifce.edu.br"
-PASSWORD="bind@check!pass"
+ACCOUNT="" #sensitive information to be added later
+PASSWORD="" #sensitive information to be added later
 
 #principal query LDAP
 queryLdap="$(ldapsearch -x -H "$URI" -D "${ACCOUNT}" -w "${PASSWORD}" -b "${BASE}" (|(cn=$1)(mail=$1@ifce.edu.br)) -s sub sAMAccountName mail)"
